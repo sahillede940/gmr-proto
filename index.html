@@ -16,6 +16,7 @@
         through the airport. Ask me anything about flights, facilities, or
         services!
       </p>
+      <div id="heygen-streaming-embed"></div>
       <div class="sample-questions">
         <h3>Sample Questions</h3>
         <ul>
@@ -51,40 +52,46 @@
     visibility: visible;
   }
   #heygen-streaming-container {
-     height: 600px;
+    height: 600px;
     width: 100%;
   }
   #heygen-streaming-container iframe {
-     height: 600px;
+    height: 600px;
     width: 100%;
     border: 0;
   }
 `;
 
         const iframe = document.createElement("iframe");
-        (iframe.allowFullscreen = !1),
-          (iframe.title = "Streaming Embed"),
-          (iframe.role = "dialog"),
-          (iframe.allow = "microphone"),
-          (iframe.src = url);
-        let visible = !1,
-          initial = !1;
+        iframe.allowFullscreen = false;
+        iframe.title = "Streaming Embed";
+        iframe.role = "dialog";
+        iframe.allow = "microphone";
+        iframe.src = url;
+        let visible = false,
+          initial = false;
         window.addEventListener("message", (e) => {
-          e.origin === host &&
+          if (
+            e.origin === host &&
             e.data &&
-            e.data.type &&
-            "streaming-embed" === e.data.type &&
-            ("init" === e.data.action
-              ? ((initial = !0), wrapDiv.classList.toggle("show", initial))
-              : "show" === e.data.action
-              ? ((visible = !0), wrapDiv.classList.toggle("expand", visible))
-              : "hide" === e.data.action &&
-                ((visible = !1), wrapDiv.classList.toggle("expand", visible)));
-        }),
-          container.appendChild(iframe),
-          wrapDiv.appendChild(stylesheet),
-          wrapDiv.appendChild(container),
-          document.body.appendChild(wrapDiv);
+            e.data.type === "streaming-embed"
+          ) {
+            if (e.data.action === "init") {
+              initial = true;
+              wrapDiv.classList.toggle("show", initial);
+            } else if (e.data.action === "show") {
+              visible = true;
+              wrapDiv.classList.toggle("expand", visible);
+            } else if (e.data.action === "hide") {
+              visible = false;
+              wrapDiv.classList.toggle("expand", visible);
+            }
+          }
+        });
+        container.appendChild(iframe);
+        wrapDiv.appendChild(stylesheet);
+        wrapDiv.appendChild(container);
+        document.getElementById("heygen-streaming-embed").appendChild(wrapDiv);
       })(globalThis);
     </script>
   </body>
