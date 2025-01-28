@@ -10,8 +10,13 @@
   <body class="dark">
     <div class="heygen-streaming-container">
       <div class="logo-container">
-        <img src="images/gmr-logo.png" alt="GMR Logo" class="gmr-logo" />
-        <img src="images/lumio-logo.avif" alt="Lumio AI Logo" class="lumio-ai-logo" />
+        <img src="images/gmr.png" alt="GMR Logo" class="gmr-logo" height="60" />
+        <img
+          src="images/lumio.png"
+          alt="Lumio AI Logo"
+          class="lumio-ai-logo"
+          height="60"
+        />
       </div>
       <p class="avatar-description">
         Meet your AI-powered airport assistant. I'm here to provide real-time
@@ -22,20 +27,54 @@
       <div id="heygen-streaming-embed"></div>
       <div class="sample-questions">
         <h3>Sample Questions</h3>
-        <ul>
-          <li>Where can I find the nearest restroom?</li>
-          <li>Where is the prayer room in this airport?</li>
-          <li>What restaurants are open 24/7 in this airport?</li>
-          <li>What's the fastest way to get through security?</li>
-          <li>What duty-free shops are available after security?</li>
-          <li>Is there a smoking area in the airport?</li>
-          <li>Is Starbucks open right now?</li>
-          <li>What's on Starbucks vegetarian menu?</li>
-          <li>Where can I buy gifts for my 15 year old nephew?</li>
-          <li>
-            I'm running late for my flight, where can I grab a quick bite from?
-          </li>
-        </ul>
+        <div class="questions-rows">
+          <!-- Row 1 -->
+          <div class="questions-scroll">
+            <div class="scroll-content">
+              <div class="question-card">
+                Where can I find the nearest restroom?
+              </div>
+              <div class="question-card">Where is the prayer room?</div>
+              <div class="question-card">What restaurants are open 24/7?</div>
+              <div class="question-card">How to get through security fast?</div>
+              <!-- Duplicate for seamless scroll -->
+              <div class="question-card">
+                Where can I find the nearest restroom?
+              </div>
+              <div class="question-card">Where is the prayer room?</div>
+              <div class="question-card">What restaurants are open 24/7?</div>
+              <div class="question-card">How to get through security fast?</div>
+            </div>
+          </div>
+          <!-- Row 2 -->
+          <div class="questions-scroll">
+            <div class="scroll-content reverse">
+              <div class="question-card">Where are duty-free shops?</div>
+              <div class="question-card">Is there a smoking area?</div>
+              <div class="question-card">Is Starbucks open right now?</div>
+              <div class="question-card">Where can I exchange currency?</div>
+              <!-- Duplicate for seamless scroll -->
+              <div class="question-card">Where are duty-free shops?</div>
+              <div class="question-card">Is there a smoking area?</div>
+              <div class="question-card">Is Starbucks open right now?</div>
+              <div class="question-card">Where can I exchange currency?</div>
+            </div>
+          </div>
+          <!-- Row 3 -->
+          <div class="questions-scroll">
+            <div class="scroll-content">
+              <div class="question-card">Where is the lost and found?</div>
+              <div class="question-card">How do I get to Terminal 2?</div>
+              <div class="question-card">Where can I store my luggage?</div>
+              <div class="question-card">Is there a pharmacy nearby?</div>
+              <!-- Duplicate for seamless scroll -->
+              <div class="question-card">Where is the lost and found?</div>
+              <div class="question-card">How do I get to Terminal 2?</div>
+              <div class="question-card">Where can I store my luggage?</div>
+              <div class="question-card">Is there a pharmacy nearby?</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -52,25 +91,25 @@
         container.id = "heygen-streaming-container";
         const stylesheet = document.createElement("style");
         stylesheet.innerHTML = `
-  #heygen-streaming-embed {
-    height: 600px;
-    width: 100%;
-    background-color: #1a1a1a;
-  }
-  #heygen-streaming-embed.show {
-    opacity: 1;
-    visibility: visible;
-  }
-  #heygen-streaming-container {
-    height: 600px;
-    width: 100%;
-  }
-  #heygen-streaming-container iframe {
-    height: 600px;
-    width: 100%;
-    border: 0;
-  }
-`;
+          #heygen-streaming-embed {
+            height: 600px;
+            width: 100%;
+            background-color: #1a1a1a;
+          }
+          #heygen-streaming-embed.show {
+            opacity: 1;
+            visibility: visible;
+          }
+          #heygen-streaming-container {
+            height: 600px;
+            width: 100%;
+          }
+          #heygen-streaming-container iframe {
+            height: 600px;
+            width: 100%;
+            border: 0;
+          }
+        `;
 
         const iframe = document.createElement("iframe");
         iframe.allowFullscreen = false;
