@@ -28,7 +28,11 @@ body.dark {
     margin-bottom: 20px;
 }
 
-.gmr-logo,
+.gmr-logo{
+    height: 50px;
+    margin: 0 10px;
+}
+
 .lumio-ai-logo {
     height: 60px;
     margin: 0 10px;
