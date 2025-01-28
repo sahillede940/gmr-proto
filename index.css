@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+}
+
+body.dark {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 20px;
+}
+
+.heygen-streaming-container {
+    margin: auto;
+    padding: 25px;
+    background-color: #2a2a2a;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+h2 {
+    font-size: 70px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.avatar-description {
+    font-size: 16px;
+    color: #b0b0b0;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    padding: 18px;
+    border: 1px solid #3a3a3a;
+    margin: 12px 0;
+    background-color: #333333;
+    border-radius: 12px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    color: #e0e0e0;
+}
+
+li:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background-color: #404040;
+}
+
+#heygen-streaming-embed {
+    height: 600px;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #1a1a1a;
+}
+
+#heygen-streaming-embed.show {
+    opacity: 1;
+    visibility: visible;
+    background-color: #1a1a1a;
+}
+
+#heygen-streaming-container {
+    height: 600px;
+    width: 100%;
+}
+
+#heygen-streaming-container iframe {
+    height: 600px;
+    width: 100%;
+    border: 0;
+    margin-top: 40px;
+}

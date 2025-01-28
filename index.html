@@ -1,91 +1,46 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumio AI - Airport Assistant</title>
     <link rel="stylesheet" href="index.css" />
     <link rel="icon" href="./favicon.ico" />
   </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-      line-height: 1.6;
-      color: #333; /* Neutral text color */
-    }
-
-    body {
-      background-color: #f3f4f6; /* Light, calming background */
-      padding: 20px;
-    }
-
-    .heygen-streaming-container {
-      margin: auto;
-      max-width: 800px;
-      padding: 25px; /* Slightly larger padding for better spacing */
-      background-color: #ffffff;
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
-      border-radius: 15px; /* More pronounced rounded corners */
-    }
-
-    h2 {
-      font-size: 70px;
-      font-weight: 700;
-      color: #1f2937; /* Darker heading color for contrast */
-      margin-bottom: 20px;
-      text-align: center; /* Center align the title */
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      padding: 18px; /* Adjusted padding for proportional spacing */
-      border: 1px solid #e5e7eb; /* Lighter border for subtlety */
-      margin: 12px 0; /* Consistent spacing between items */
-      background-color: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06); /* Light shadow for modern feel */
-      transition:
-        transform 0.3s,
-        box-shadow 0.3s,
-        background-color 0.3s; /* Smooth transitions */
-    }
-
-    li:hover {
-      transform: scale(1.03); /* Slight hover animation */
-      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
-      background-color: #f8fafc; /* Light hover background */
-    }
-
-  </style>
-
-  <body>
-    <h2>Lumio AI</h2>
-    <ul>
-      <li>Where can I exchange currency at the airport?</li>
-      <li>What is the process if my luggage is lost?</li>
-      <li>What is the menu at Jamie Oliver’s Pizzeria?</li>
-      <li>Can I relax at a lounge before my flight? If so, where?</li>
-      <li>What is the real-time status of flight AI123?</li>
-      <li>Where can I get free Wi-Fi at the airport?</li>
-    </ul>
+  <body class="dark">
+    <div class="heygen-streaming-container">
+      <h2>Lumio AI</h2>
+      <p class="avatar-description">
+        Meet your AI-powered airport assistant. I'm here to provide real-time
+        information, answer your travel queries, and ensure a smooth journey
+        through the airport. Ask me anything about flights, facilities, or
+        services!
+      </p>
+      <div class="sample-questions">
+        <h3>Sample Questions</h3>
+        <ul>
+          <li>Where can I exchange currency at the airport?</li>
+          <li>What is the process if my luggage is lost?</li>
+          <li>What is the menu at Jamie Oliver's Pizzeria?</li>
+          <li>Can I relax at a lounge before my flight? If so, where?</li>
+          <li>What is the real-time status of flight AI123?</li>
+          <li>Where can I get free Wi-Fi at the airport?</li>
+        </ul>
+      </div>
+    </div>
 
     <script>
       !(function (window) {
-        const host = 'https://labs.heygen.com',
+        const host = "https://labs.heygen.com",
           url =
             host +
-            '/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJTaWxhc0hSX3B1YmxpYyIsInByZXZpZXdJ%0D%0AbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzU4MmVlOGZlMDcyYTQ4ZmRh%0D%0AM2JjNjgyNDFhZWZmNjYwXzQ1NjYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVkUmVtb3ZlQmFj%0D%0Aa2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjBjMzNlNGI3YTA0NjQ3MWQ5ZGQ4ZjRh%0D%0AZDBjYTg2MzM0IiwidXNlcm5hbWUiOiI3ZDI4NTBiMjcxNzA0NGQ5YjFjYWRkOWNmMTE3NGEwMyJ9&inIFrame=1',
+            "/guest/streaming-embed?share=eyJxdWFsaXR5IjoiaGlnaCIsImF2YXRhck5hbWUiOiJTaWxhc0hSX3B1YmxpYyIsInByZXZpZXdJ%0D%0AbWciOiJodHRwczovL2ZpbGVzMi5oZXlnZW4uYWkvYXZhdGFyL3YzLzU4MmVlOGZlMDcyYTQ4ZmRh%0D%0AM2JjNjgyNDFhZWZmNjYwXzQ1NjYwL3ByZXZpZXdfdGFyZ2V0LndlYnAiLCJuZWVkUmVtb3ZlQmFj%0D%0Aa2dyb3VuZCI6ZmFsc2UsImtub3dsZWRnZUJhc2VJZCI6IjBjMzNlNGI3YTA0NjQ3MWQ5ZGQ4ZjRh%0D%0AZDBjYTg2MzM0IiwidXNlcm5hbWUiOiI3ZDI4NTBiMjcxNzA0NGQ5YjFjYWRkOWNmMTE3NGEwMyJ9&inIFrame=1",
           clientWidth = document.body.clientWidth,
-          wrapDiv = document.createElement('div');
-        wrapDiv.id = 'heygen-streaming-embed';
-        const container = document.createElement('div');
-        container.id = 'heygen-streaming-container';
-        const stylesheet = document.createElement('style');
+          wrapDiv = document.createElement("div");
+        wrapDiv.id = "heygen-streaming-embed";
+        const container = document.createElement("div");
+        container.id = "heygen-streaming-container";
+        const stylesheet = document.createElement("style");
         stylesheet.innerHTML = `
   #heygen-streaming-embed {
     height: 600px;
@@ -106,25 +61,25 @@
   }
 `;
 
-        const iframe = document.createElement('iframe');
+        const iframe = document.createElement("iframe");
         (iframe.allowFullscreen = !1),
-          (iframe.title = 'Streaming Embed'),
-          (iframe.role = 'dialog'),
-          (iframe.allow = 'microphone'),
+          (iframe.title = "Streaming Embed"),
+          (iframe.role = "dialog"),
+          (iframe.allow = "microphone"),
           (iframe.src = url);
         let visible = !1,
           initial = !1;
-        window.addEventListener('message', (e) => {
+        window.addEventListener("message", (e) => {
           e.origin === host &&
             e.data &&
             e.data.type &&
-            'streaming-embed' === e.data.type &&
-            ('init' === e.data.action
-              ? ((initial = !0), wrapDiv.classList.toggle('show', initial))
-              : 'show' === e.data.action
-                ? ((visible = !0), wrapDiv.classList.toggle('expand', visible))
-                : 'hide' === e.data.action &&
-                  ((visible = !1), wrapDiv.classList.toggle('expand', visible)));
+            "streaming-embed" === e.data.type &&
+            ("init" === e.data.action
+              ? ((initial = !0), wrapDiv.classList.toggle("show", initial))
+              : "show" === e.data.action
+              ? ((visible = !0), wrapDiv.classList.toggle("expand", visible))
+              : "hide" === e.data.action &&
+                ((visible = !1), wrapDiv.classList.toggle("expand", visible)));
         }),
           container.appendChild(iframe),
           wrapDiv.appendChild(stylesheet),
